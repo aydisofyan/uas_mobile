@@ -92,9 +92,18 @@ class _HomepageState extends State<Homepage> {
                   subtitle: "3456 songs",
                   notifyParents: refresh,
                 ),
+                CircleTrackWidget(
+                  song: mostPopular,
+                  title: "Your playlist",
+                  subtitle: "345 songs",
+                  notifyParents: refresh,
+                ),
+                SizedBox(height: 130),
               ],
             ),
           ),
+          Align(alignment: Alignment.bottomCenter, child: PlayerHome(currentSong), 
+          )
         ],
       ),
     );
@@ -102,6 +111,96 @@ class _HomepageState extends State<Homepage> {
 
   refresh() {
     setState(() {});
+  }
+}
+
+Song currentSong = Song(
+  name: "tittle",
+  singer: "singer",
+  image: "assets/song1.jpg",
+  duration: 100,
+  color: Colors.black,
+);
+double currentSlider = 0;
+
+class PlayerHome extends StatefulWidget {
+  final Song song;
+  PlayerHome(this.song);
+
+  @override
+  _PlayerHomeState createState() => _PlayerHomeState();
+}
+
+class _PlayerHomeState extends State<PlayerHome> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 130,
+      padding: EdgeInsets.all(8),
+      decoration: BoxDecoration(
+        color: Colors.black,
+        borderRadius: BorderRadius.only(topRight: Radius.circular(30)),
+
+      ),
+      child: Column(
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Row(
+                children: [
+                  CircleAvatar(
+                    backgroundImage: AssetImage(widget.song.image),
+                    radius: 30,
+                  ),
+                  SizedBox(width: 10 ,),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(widget.song.name, style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold 
+                      ),),
+                      Text(widget.song.singer,
+                      style: TextStyle(
+                        color: Colors.white54,
+                      ),)
+                    ],
+                    
+                  ),
+                ],
+              ),
+              Row(
+            children: [
+              Icon(Icons.skip_previous_outlined, color: Colors.white, size: 30),
+              SizedBox(
+                width: 10,
+              ),
+              Icon(Icons.pause, color: Colors.white, size: 30),
+              SizedBox(width: 10,),
+              Icon(Icons.skip_next_outlined, color: Colors.white, size: 30),
+              SizedBox(
+                width: 10,
+              ),
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text(Duration(seconds: currentSlider.toInt()).toString().split('.')[0].substring(2),
+              style: TextStyle(color: Colors.white),),
+              
+            ],
+          )
+              
+            ],
+          ),
+          
+        ],
+      ),
+    );
   }
 }
 
@@ -210,21 +309,22 @@ class CircleTrackWidget extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               itemBuilder: (BuildContext context, int index) {
                 return Container(
-                  margin: EdgeInsets.symmetric(horizontal: 10 ),
-                  child: Column( 
+                  margin: EdgeInsets.symmetric(horizontal: 10),
+                  child: Column(
                     children: [
                       CircleAvatar(
                         backgroundImage: AssetImage(song[index].image),
                         radius: 40,
                       ),
-                      SizedBox(
-                        height: 5,
+                      SizedBox(height: 5),
+                      Text(
+                        song[index].name,
+                        style: TextStyle(color: Colors.white),
                       ),
-                      Text(song[index].name,
-                      style: TextStyle(color: Colors.white),),
-                      Text(song [index].singer,
-                      style: TextStyle(color: Colors.white54),)
-            
+                      Text(
+                        song[index].singer,
+                        style: TextStyle(color: Colors.white54),
+                      ),
                     ],
                   ),
                 );

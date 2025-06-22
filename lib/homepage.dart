@@ -12,10 +12,10 @@ class _HomepageState extends State<Homepage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[900],
+      backgroundColor: Color.fromARGB(255, 19, 19, 19),
       appBar: AppBar(
         systemOverlayStyle: SystemUiOverlayStyle.light,
-        backgroundColor: Colors.grey[900],
+        backgroundColor: Color.fromARGB(255, 19, 19, 19),
         elevation: 0,
         leading: Icon(Icons.search, color: Colors.white),
 
@@ -44,6 +44,7 @@ class _HomepageState extends State<Homepage> {
               Icons.notifications_active_outlined,
               size: 30,
               color: Colors.white,
+              
             ),
           ),
         ],
@@ -123,6 +124,7 @@ Song currentSong = Song(
   image: "assets/song1.jpg",
   duration: 100,
   color: Colors.black,
+  audioPath:"assets/audio/song1.jpg", 
 );
 double currentSlider = 0;
 
@@ -187,6 +189,11 @@ class _PlayerHomeState extends State<PlayerHome> {
                 ),
                 Row(
                   children: [
+                    Icon(
+                      Icons.skip_previous_outlined,
+                      color: Colors.white,
+                      size: 30,
+                    ),
                     Icon(Icons.pause, color: Colors.white, size: 30),
                     SizedBox(width: 10),
                     Icon(
@@ -392,3 +399,5 @@ class CircleTrackWidget extends StatelessWidget {
     );
   }
 }
+
+

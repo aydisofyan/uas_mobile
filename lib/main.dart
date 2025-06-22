@@ -1,22 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:uas_mobile/homepage.dart';
+import 'package:uas_mobile/login.dart';
+import 'package:uas_mobile/navigation.dart';
+import 'package:uas_mobile/splashscreen.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: 'Music App',
       debugShowCheckedModeBanner: false,
-      title: 'MUSIKKU ',
-      
-      home: Homepage(),
-      
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const SplashPage(),
+        '/login': (context) => const LoginPage(),
+        '/beranda': (context) => const NavigationPage(),
+      },
+      theme: ThemeData.dark(),
     );
   }
 }
-
-

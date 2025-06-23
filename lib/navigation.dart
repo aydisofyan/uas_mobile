@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:uas_mobile/musikPlayer.dart';
+import 'package:uas_mobile/profile.dart';
 import 'homepage.dart';
 
 class NavigationPage extends StatefulWidget {
@@ -15,7 +16,7 @@ class _NavigationPageState extends State<NavigationPage> {
   final List<Widget> _children = [
     Homepage(), // Home// Placeholder
     MusicPlayer(currentSong),  // Placeholder
-    Center(child: Text("Profile Page", style: TextStyle(color: Colors.white))),  // Placeholder
+    UserProfilePage(),  // Placeholder
   ];
 
   void _onTap(int index) {

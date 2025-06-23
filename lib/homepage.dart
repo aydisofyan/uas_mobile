@@ -115,7 +115,7 @@ class _HomepageState extends State<Homepage> {
 
   refresh() {
     setState(() {});
-  }
+  } 
 }
 
 Song currentSong = Song(

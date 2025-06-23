@@ -86,7 +86,7 @@ class _HomePageState extends State<LoginPage> {
                   hintText: 'example@gmail.com',
                   hintStyle: const TextStyle(color: Color.fromARGB(255, 11, 11, 11)),
                   filled: true,
-                  fillColor: const Color.fromARGB(255, 165, 165, 165),
+                  fillColor: const Color.fromARGB(255, 61, 61, 61),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(8),
                   ),
@@ -106,7 +106,7 @@ class _HomePageState extends State<LoginPage> {
                         _isChecked = val ?? false;
                       });
                     },
-                    activeColor: const Color(0xFFF44336),
+                    activeColor: Colors.amberAccent,
                   ),
                   Expanded(
                     child: Padding(
@@ -121,7 +121,7 @@ class _HomePageState extends State<LoginPage> {
                             ),
                             TextSpan(
                               text: 'syarat, ketentuan',
-                              style: TextStyle(color: Color(0xFFF44336)),
+                              style: TextStyle(color: Colors.amberAccent),
                             ),
                             TextSpan(
                               text: ', dan ',
@@ -129,7 +129,7 @@ class _HomePageState extends State<LoginPage> {
                             ),
                             TextSpan(
                               text: 'privasi',
-                              style: TextStyle(color: Colors.red),
+                              style: TextStyle(color: Colors.amberAccent),
                             ),
                             TextSpan(
                               text: '\nCookie',
@@ -163,7 +163,7 @@ class _HomePageState extends State<LoginPage> {
                     }
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color.fromARGB(255, 165, 165, 165),
+                    backgroundColor: Color.fromARGB(255, 61, 61, 61),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8),
                     ),
@@ -171,7 +171,7 @@ class _HomePageState extends State<LoginPage> {
                   child: const Text(
                     'MASUK',
                     style: TextStyle(
-                      color: Color.fromARGB(255, 23, 23, 23),
+                      color: Color.fromARGB(255, 255, 255, 255),
                       fontWeight: FontWeight.bold,
                       fontSize: 16,
                     ),

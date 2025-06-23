@@ -15,7 +15,7 @@ class MusicPlayer extends StatefulWidget {
 class _MusicPlayerState extends State<MusicPlayer> {
   double currentSlider = 0;
 
-  @override
+  @override 
   Widget build(BuildContext context) {
     return Stack(
       children: [
@@ -73,7 +73,7 @@ class _MusicPlayerState extends State<MusicPlayer> {
                   child: Container(
                     height: 280,
                     width: MediaQuery.of(context).size.width,
-                    decoration: BoxDecoration(
+                    decoration: BoxDecoration( 
                       color: Colors.white.withOpacity(0.2),
                       borderRadius: BorderRadius.circular(16),
                       border: Border.all(
